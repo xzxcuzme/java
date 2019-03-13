@@ -11,14 +11,16 @@ public class csv {
             int c;
 
             String newcsv = "C:/Users/Игшорь/Documents/GitHub/java/2. csv writer, reader/src/dataout.csv";
-            CSVWriter writer = new CSVWriter(new FileWriter(newcsv));
-            String [] country = "India#China#United States".split("#");
-            writer.writeNext(country);
-            writer.close();
+            //CSVWriter writer = new CSVWriter(new FileWriter(newcsv));
+
 
 
             while((c=reader.read())!=-1){
                 System.out.print((char)c);
+
+               // String [] country = "India#China#United States".split("#");
+                //writer.writeNext(country);
+                //writer.close();
             }
 
         }
