@@ -10,7 +10,8 @@ public class csv {
             PrintWriter writer = new PrintWriter(new FileWriter(newcsv));
             while((c=reader.read())!=-1){
                 System.out.print((char)c);
-                writer.println((char)c + "           ");
+                writer.flush();
+                writer.print((char)c);
              }
 
         }
