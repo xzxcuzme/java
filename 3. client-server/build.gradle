@@ -3,8 +3,3 @@ apply plugin: 'application'
 
 mainClassName = 'Client'
 mainClassName = 'MyThread'
-
-jar {
-    baseName = 'gs-gradle'
-    version =  '0.1.0'
-}
