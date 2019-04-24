@@ -1,0 +1,41 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath('org.springframework.boot:spring-boot-gradle-plugin:2.1.2.RELEASE')
+    }
+}
+
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+//compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.2.RELEASE' 
+compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.2.RELEASE'
+//compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.1.2.RELEASE'
+//compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.2.RELEASE'
+//compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+
+
+}
+
+mainClassName = 'com.example.demo.DemoApplication'
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.example.demo.DemoApplication'
+    }
+}
+
+task tar(type: Exec) {
+    commandLine "bash", "-c", "tar -cvzf JavaExampleProject.tar.gz build/libs/*.jar build/resources"
+}

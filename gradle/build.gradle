@@ -1,5 +1,22 @@
 apply plugin: 'java'
 apply plugin: 'application'
+apply plugin: "findbugs"
 
-mainClassName = 'Client'
-mainClassName = 'MyThread'
+mainClassName = "MyThread"
+
+ tasks.withType(FindBugs) {
+    reports {
+        xml.enabled false
+        html.enabled true       
+    }
+}
+
+repository {
+maven()
+}
+
+
+dependencies { 
+compile "com.google.code.findbugs:annotations:3.0.1"
+
+} 
