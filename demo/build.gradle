@@ -19,15 +19,12 @@ repositories {
 }
 
 dependencies {
-compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.2.RELEASE'
+//compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: '2.1.2.RELEASE' 
 compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: '2.1.2.RELEASE'
 //compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.1.2.RELEASE'
 //compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.1.2.RELEASE'
 //compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
-compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.0.1'
-//compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.1.2.RELEASE'
-compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: '2.1.5.RELEASE'
-testCompile("junit:junit")
+
 
 }
 
@@ -38,8 +35,6 @@ jar {
         attributes 'Main-Class': 'com.example.demo.DemoApplication'
     }
 }
-
-tasks.withType(Javadoc) { options.encoding = 'UTF-8' }
 
 task tar(type: Exec) {
     commandLine "bash", "-c", "tar -cvzf JavaExampleProject.tar.gz build/libs/*.jar build/resources"
