@@ -4,43 +4,37 @@
 <meta charset="UTF-8">
 <title>Сhat</title>
 <link href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
-<!--<link href="style.css" rel="stylesheet"> -->
+<link href="style.css" rel="stylesheet">
 <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
 <script src="webjars/sockjs-client/1.1.2/sockjs.min.js"></script>
 <script src="webjars/stomp-websocket/2.3.3/stomp.min.js"></script>
 <script src="script.js"></script>
 </head>
 <body>
-	<h1>Simple chat</h1>
-	<div class="chat_window">
-		<div class="top_menu">
-			<div class="buttons">
-				<div class="button close"></div>
-				<div class="button minimize"></div>
-				<div class="button maximize"></div>
-			</div>
+	<h1>Chat</h1>
+	<section class="chat_window">
+		<header class="top_menu">
 			<div class="title">Chat</div>
-		</div>
+		</header>
 		<ul class="messages"></ul>
-		<div class="bottom_wrapper clearfix">
+		<nav class="bottom_wrapper clearfix">
 			<div class="message_input_wrapper">
 				<input id="message_input_value" class="message_input" placeholder="Type your message here..." />
 			</div>
-			<div class="send_message">
-				<div class="icon"></div>
-				
-			</div>
 			
-			<button onclick="connect()">Connect to chat</button>
-			<button onclick="sendMessage()" class="text">Send</button>
-				<button onclick="disconnect()">Disconnect from chat</button>
-		</div>
-	</div>
-	<div id="message_template" class="message_template">
+			<button onclick="sendMessage()" class="text send_message">Send</button>	
+				
+			<button onclick="connect()" class="text connect_message">Connect to chat</button>
+			
+			<button onclick="disconnect()" class="text disconnect_message">Disconnect from chat</button>
+		</nav>
+	</section>
+	<section id="message_template" class="message_template">
 		<li class="message"><div class="avatar"></div>
 			<div class="text_wrapper">
 				<div class="text"></div>
-			</div></li>
-	</div>
+			</div>
+		</li>
+	</section>
 </body>
 </html>
