@@ -71,20 +71,20 @@ body {
   opacity: 0;
 }
 .messages .message.left .avatar {
-  background-color: #f5886e;
+  background-color: #a627e5;
   float: left;
 }
 .messages .message.left .text_wrapper {
-  background-color: #ffe6cb;
+  background-color: #e9f9e5;
   margin-left: 20px;
 }
 .messages .message.left .text_wrapper::after, 
 .messages .message.left .text_wrapper::before {
   right: 100%;
-  border-right-color: #ffe6cb;
+  border-right-color: #e9f9e5;
 }
 .messages .message.left .text {
-  color: #c48843;
+  color: black;
 }
 .messages .message.right .avatar {
   background-color: #fdbf68;
@@ -193,8 +193,8 @@ body {
   line-height: 48px;
 }
 .bottom_wrapper .connect_message {
-  width: 110px;
-  height: 20px;
+  width: 130px;
+  height: 25px;
   display: inline-block;  
   background-color: white;
   border: 1px solid black;
@@ -202,8 +202,8 @@ body {
   cursor: pointer;
   transition: all 0.2s linear;
   text-align: center;  
-  opacity: 0.7;  
-  margin-top: 10px;
+  opacity: 0.7;
+
 }
 
 .bottom_wrapper .connect_message:hover { 
@@ -213,8 +213,8 @@ body {
 }
 
 .bottom_wrapper .disconnect_message {
-  width: 140px;
-  height: 20px;
+  width: 170px;
+  height: 25px;
   display: inline-block;  
   background-color: white;
   border: 1px solid black;
