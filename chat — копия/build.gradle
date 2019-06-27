@@ -24,7 +24,7 @@ jar {
 }
 
 
-dependencies {
+dependencies {   
     compile 'org.webjars:bootstrap:4.3.1'
     compile 'org.webjars:jquery:3.4.1'
     compile group: 'org.webjars', name: 'sockjs-client', version: '1.1.2'

@@ -1,27 +1,13 @@
 package com.ru.chat;
 
-import org.springframework.data.annotation.Id;
-import java.util.Date;
-
 public class Message {
+    private String content;
 
-    private String from;
-    private String message;
-    public String getFrom() {
-        return from;
-    }
-    public void setFrom(String from) {
-        this.from = from;
-    }
-    public String getMessage() {
-        return message;
-    }
-    public void setMessage(String message) {
-        this.message = message;
-    }
-    @Override
-    public String toString() {
-        return "Message [from=" + from + ", message=" + message + "]";
+    public Message(String content) {
+        this.content = content;
     }
 
+    public String getContent() {
+        return content;
+    }
 }
