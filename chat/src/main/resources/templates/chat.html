@@ -17,7 +17,13 @@
         max-height: 500px;
         }
         .media-list {
-        overflow: auto;
+        list-style-type: none;
+		background-color: #FFF;
+		margin: 0;
+		overflow: auto;
+		overflow-y: scroll;
+		padding: 0 20px 0px 20px;
+		height: calc(100% - 150px);
         }
     </style>
 </head>
@@ -26,7 +32,6 @@
 	<div class="row " style="padding-top:40px;">
 		<h3 class="text-center">Realtime Chat Application with Spring Boot, Websockets, and MongoDB </h3>
 		<br/><br/>
-
 		<div class="col-md-12">
 			<div class="panel panel-info">
 				<div class="panel-heading">
