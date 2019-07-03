@@ -1,11 +1,10 @@
 package com.ru.chat;
 
+import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import java.util.Date;
 
-
-@Document(collection = "MessageModel")
+@Document(collection = "NewChat")
 public class MessageModel {
 
     @Id
@@ -13,12 +12,12 @@ public class MessageModel {
 
     private String text;
     private String author;
-    private Date createDate;
+    private LocalDateTime createDate;
 
     public MessageModel() {
 
     }
-    public MessageModel(String text, String author, Date createDate) {
+    public MessageModel(String text, String author, LocalDateTime createDate) {
         this.text = text;
         this.author = author;
         this.createDate = createDate;
@@ -40,11 +39,11 @@ public class MessageModel {
         this.author = author;
     }
 
-    public Date getCreateDate() {
+    public LocalDateTime getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(LocalDateTime createDate) {
         this.createDate = createDate;
     }
 

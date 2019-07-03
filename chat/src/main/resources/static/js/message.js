@@ -20,7 +20,7 @@ function refreshMessages(messages) {
     $(".media-list").html("");
     $.each(messages.reverse(), function(i, message) {
         $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div class="media-body">'
-        + message.text + '<br/><small class="text-muted">' + message.author + ' | ' + new Date(message.createDate) + '</small><hr/></div></div></div></li>');
+        + message.text + '<br/><small class="text-muted">' + message.author + ' | ' + Date(message.createDate) + '</small><hr/></div></div></div></li>');
     });
 }
 
