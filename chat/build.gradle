@@ -35,5 +35,6 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 	compile group: 'org.mongodb', name: 'mongo-java-driver', version: '3.10.2'
+	compile 'org.springframework:spring-messaging'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }

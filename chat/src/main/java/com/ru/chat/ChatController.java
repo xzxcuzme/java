@@ -1,6 +1,5 @@
 package com.ru.chat;
 
-import org.joda.time.LocalDateTime;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -37,7 +37,7 @@ public class ChatController {
     @MessageMapping("/newMessage")
     @SendTo("/topic/newMessage")
     public Message save(MessageModel MessageModel) {
-        MessageModel Message = new MessageModel(MessageModel.getText(), MessageModel.getAuthor(), new LocalDateTime());
+        MessageModel Message = new MessageModel(MessageModel.getText(), MessageModel.getAuthor(), new Date());
         MessageModel message = chatMessageRepository.save(Message);
         List<MessageModel> MessageModelList = chatMessageRepository.findAll(PageRequest.of(0, 50, Sort.Direction.DESC, "createDate")).getContent();
         return new Message(MessageModelList.toString());

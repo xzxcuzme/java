@@ -20,7 +20,7 @@ function refreshMessages(messages) {
     $(".media-list").html("");
     $.each(messages.reverse(), function(i, message) {
         $(".media-list").append('<li class="media"><div class="media-body"><div class="media"><div class="media-body">'
-        + message.text + '<br/><small class="text-muted">' + message.author + ' | ' + Date(message.createDate) + '</small><hr/></div></div></div></li>');
+        + message.text + '<br/><small class="text-muted">' + message.author + ' | ' + new Date(message.createDate) + '</small><hr/></div></div></div></li>');
     });
 }
 
@@ -51,8 +51,10 @@ $(function(){
         $container[0].scrollTop = $container[0].scrollHeight;
         var message = $("#messageText").val();
         var author = $.cookie("realtime-chat-nickname");
+       // var today = new Date(createDate);
+       // var UTCstring = today.toUTCString();
 
-        stompClient.send("/app/newMessage", {}, JSON.stringify({ 'text': message, 'author': author}));
+        stompClient.send("/app/newMessage", {}, JSON.stringify({ 'text': message, 'author': author }));
 
         $("#messageText").val("")
         $container.animate({ scrollTop: $container[0].scrollHeight }, "slow");

@@ -1,8 +1,10 @@
 package com.ru.chat;
 
-import org.joda.time.LocalDateTime;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Date;
+
 
 @Document(collection = "NewChat")
 public class MessageModel {
@@ -12,12 +14,19 @@ public class MessageModel {
 
     private String text;
     private String author;
-    private LocalDateTime createDate;
+    private Date createDate;
 
-    public MessageModel() {
+    //Date createDate = new Date();
+    //java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("MM/dd");
+    //String createDateString = df.format(createDate);
 
-    }
-    public MessageModel(String text, String author, LocalDateTime createDate) {
+
+
+    //java.text.SimpleDateFormat df = new java.text.SimpleDateFormat("MM/dd");
+    //String createDateString = df.format(createDate);
+
+
+    public MessageModel(String text, String author, Date createDate) {
         this.text = text;
         this.author = author;
         this.createDate = createDate;
@@ -39,20 +48,17 @@ public class MessageModel {
         this.author = author;
     }
 
-    public LocalDateTime getCreateDate() {
+    public  Date getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(LocalDateTime createDate) {
+    public void setCreateDate(Date createDate) {
         this.createDate = createDate;
     }
 
     @Override
     public String toString() {
-        return "{" +"\"id\":\"" + id + '\"' +
-                ",\"text\":\"" + text + '\"' +
-                ",\"author\":\"" + author + '\"' +
-                ",\"createDate\":\"" + createDate + "\"" +
-                '}';
+        return "{" +"\"id\":\"" + id + '\"' + ",\"text\":\"" + text + '\"' + ",\"author\":\"" + author + '\"' +
+                ",\"createDate\":\"" + createDate + "\"" + '}';
     }
 }
